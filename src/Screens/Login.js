@@ -45,7 +45,7 @@ export default Login = function ({ navigation }) {
       >
         <Icon name="arrow-left" size={30} color={'#E77C7C'} />
       </TouchableOpacity>
-      {/* <View style={styles.avatarContainer}>
+      <View style={styles.avatarContainer}>
         <LottieView
           source={require("../assets/images/login.json")}
           autoPlay
@@ -53,7 +53,7 @@ export default Login = function ({ navigation }) {
           speed={1}
           style={styles.logo}
         />
-      </View> */}
+      </View> 
       <Text
         style={{
           fontWeight: "bold",
@@ -95,7 +95,7 @@ export default Login = function ({ navigation }) {
             onChangeText={newText => setPassword(newText)}
           />
         </View>
-        <TouchableOpacity onPress={() => {}}>
+        <TouchableOpacity>
           <Text style={{ color: "#AA7C7C", fontWeight: "600" }}>
             Forgot password?
           </Text>
@@ -147,7 +147,6 @@ export default Login = function ({ navigation }) {
         </View>
         <View style={{ flexDirection: "row", justifyContent: "space-between" }}>
           <TouchableOpacity
-            onPress={() => {}}
             style={{
               backgroundColor: "#c14949",
               borderRadius: 10,
@@ -158,7 +157,6 @@ export default Login = function ({ navigation }) {
             <Icon name="google" size={20} color="#ffffff" />
           </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => {}}
             style={{
               backgroundColor: "#284c83",
               borderRadius: 10,
