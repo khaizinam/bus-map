@@ -18,14 +18,14 @@ const App = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        
+      
         {/* <Stack.Screen name="TraCuu" component={TraCuu} options={{headerShown:false}} /> */}
+        <Stack.Screen name="Register" component={Register} options={{headerShown:false}}/>
         <Stack.Screen name="Welcome" component={Welcome} options={{headerShown:false}} />
         <Stack.Screen name="Onboarding1" component={Onboarding1} />
         <Stack.Screen name="Onboarding2" component={Onboarding2} />
         <Stack.Screen name="Onboarding3" component={Onboarding3} />
-        <Stack.Screen name="Login" component={Login} options={{headerShown:false}} /> 
-        <Stack.Screen name="Register" component={Register} options={{headerShown:false}}/>
+        <Stack.Screen name="Login" component={Login} options={{headerShown:false}} />
         <Stack.Screen name="AreaSelection" component={AreaSelection} options={{headerShown:false}}/>
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="ChooseLocation" component={ChooseLocation} />

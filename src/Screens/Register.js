@@ -61,9 +61,13 @@ export default Register = function ({ navigation }) {
     <View style={styles.container}>
       <TouchableOpacity
         onPress={() => navigation.navigate("Login")}
+<<<<<<< HEAD
         style={{ marginLeft: 23, marginTop:0.055*height , marginRight:0.85*width}}
+=======
+        style={{ marginLeft: 0,margin:15 }}
+>>>>>>> 1e9a264508f396350019835d421d416bdad612ae
       >
-        <Icon name="arrow-left" size={30} color={'#E77C7C'} />
+         <Icon name="arrow-left" size={30} color={'#E77C7C'} /> 
       </TouchableOpacity>
 
       <Text
