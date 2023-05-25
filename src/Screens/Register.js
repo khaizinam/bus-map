@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import {
   StyleSheet,
-  SafeAreaView,
   View,
   Text,
   TouchableOpacity,
@@ -59,12 +58,12 @@ export default Register = function ({ navigation }) {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <TouchableOpacity
         onPress={() => navigation.navigate("Login")}
-        style={{ alignSelf: "left", marginLeft: 23 }}
+        style={{ marginLeft: 0,margin:15 }}
       >
-        <Icon name="arrow-left" size={30} color={'#E77C7C'} />
+         <Icon name="arrow-left" size={30} color={'#E77C7C'} /> 
       </TouchableOpacity>
 
       <Text
@@ -244,7 +243,7 @@ export default Register = function ({ navigation }) {
           </TouchableOpacity>
         </View>
       </View>
-    </SafeAreaView>
+    </View>
   );
 };
 
