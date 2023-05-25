@@ -52,7 +52,6 @@ function Home({navigation}) {
     const location = await Location.getCurrentPositionAsync({});
     let lat = location.coords.latitude
     let lng = location.coords.longitude
-    animate(lat,lng)
     
     setState({
       ...state,
