@@ -19,7 +19,7 @@ const App = () => {
     <NavigationContainer>
       <Stack.Navigator>
       {/* <Stack.Screen name="Login" component={Login} options={{headerShown:false}} /> */}
-        <Stack.Screen name="TraCuu" component={TraCuu} options={{headerShown:false}} />
+        {/* <Stack.Screen name="TraCuu" component={TraCuu} options={{headerShown:false}} /> */}
         <Stack.Screen name="Welcome" component={Welcome} options={{headerShown:false}} />
         <Stack.Screen name="Onboarding1" component={Onboarding1} />
         <Stack.Screen name="Onboarding2" component={Onboarding2} />
