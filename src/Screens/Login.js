@@ -7,6 +7,7 @@ import {
   Dimensions,
   TextInput,
 } from "react-native";
+import FlashMessage,{ showMessage, hideMessage } from "react-native-flash-message";
 import LottieView from "lottie-react-native"; //animation
 import Icon from "react-native-vector-icons/FontAwesome"; //icons
 const { width, height } = Dimensions.get("screen");
@@ -24,15 +25,36 @@ export default Login = function ({ navigation }) {
   const handleLogin = () => {
     var flag = false;
     if(username === "") {
-      alert("Please enter username!");
+      //alert("Please enter username!");
+      showMessage({
+        message: "Please enter username!",
+        type: "warning",
+        icon: 'warning'
+      });
       return ; 
     }
     if(password === "") {
-      alert("Please enter password!");
+      //alert("Please enter password!");
+      showMessage({
+        message: "Please enter password!",
+        type: "warning",
+        icon: 'warning'
+      });
       flag = true;
       return;
     }
-    navigation.navigate("AreaSelection");
+    if(username === "user" && password === "123")
+      navigation.navigate("AreaSelection");
+    else
+    {
+      showMessage({
+        message: "Wrong User/Password!",
+        type: "warning",
+        icon: 'warning'
+      });
+      return;
+    }
+
   }
 
   return (
@@ -187,6 +209,7 @@ export default Login = function ({ navigation }) {
           </TouchableOpacity>
         </View>
       </View>
+      <FlashMessage position={'center'}/>
     </View>
   );
 };

@@ -30,7 +30,12 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.khaizinam.busmap"
+      "package": "com.khaizinam.busmap",
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.FOREGROUND_SERVICE"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png"
@@ -39,6 +44,12 @@
       "eas": {
         "projectId": "91d21c25-083e-4630-835d-643cfc436c23"
       }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/91d21c25-083e-4630-835d-643cfc436c23"
     }
   }
 }

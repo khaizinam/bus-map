@@ -9,7 +9,7 @@ import {View,
 import Icon from "react-native-vector-icons/FontAwesome"; //icons
 
 const screen = Dimensions.get('window'); 
-const TraCuu = () => {
+const TraCuu = ({navigation}) => {
     return (
         <View style={styles.container}>
             <View style={styles.topBar}>
@@ -20,6 +20,7 @@ const TraCuu = () => {
                             bottom:20,
                             left:20
                         }}
+                        onPress={()=>{navigation.navigate("Home")}}
                     >
                         <Icon name="arrow-left" size={30} color={'white'} />
                     </TouchableOpacity>

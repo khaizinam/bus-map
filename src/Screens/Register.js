@@ -8,6 +8,7 @@ import {
   TextInput,
 } from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome";
+import FlashMessage,{ showMessage, hideMessage } from "react-native-flash-message";
 const { width, height } = Dimensions.get("screen");
 
 export default Register = function ({ navigation }) {

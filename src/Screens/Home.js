@@ -186,13 +186,13 @@ const styles = StyleSheet.create({
     flex:1,
   },
   topBar:{
-    height:100,
+    height:150,
     backgroundColor :'#1B202D',
     width:'100%',
     padding:14,
   },
   topDownBar:{
-    height:150,
+    height:200,
     backgroundColor :'white',
     width:'100%',
     justifyContent:'flex-start',

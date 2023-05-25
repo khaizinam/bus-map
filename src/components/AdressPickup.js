@@ -10,6 +10,7 @@ const AdressPickup = ({
     const onPressAdress=(data, details) => {
         const textAddress = details.formatted_address ;
         //console.log(formatted_address)
+
         const lat = details.geometry.location.lat;
         const lng = details.geometry.location.lng;
         fetchAdress(lat, lng, textAddress);
