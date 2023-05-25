@@ -43,11 +43,11 @@ function Home({navigation}) {
   // GET LIVE LOCATION
   const getLiveLocation = async()=>{
 
-    const {status} = await Location.requestForegroundPermissionsAsync();
-    if (status !== 'granted'){
-      console.log("please grant location permission");
-      return;
-    }
+    // const {status} = await Location.requestForegroundPermissionsAsync();
+    // if (status !== 'granted'){
+    //   console.log("please grant location permission");
+    //   return;
+    // }
 
     const location = await Location.getCurrentPositionAsync({});
     let lat = location.coords.latitude
@@ -66,6 +66,7 @@ function Home({navigation}) {
         longitudeDelta: LONGITUDE_DELTA
       })
     })
+    return;
     //console.log(location)
   }
   useEffect(()=>{
