@@ -12,13 +12,14 @@ import Onboarding3 from './src/Screens/Onboarding3';
 import Login from './src/Screens/Login';
 import Register from './src/Screens/Register';
 import AreaSelection from './src/Screens/AreaSelection';
-
+import TraCuu from './src/Screens/TraCuu';
 const App = () => {
   const Stack = createNativeStackNavigator ();
   return (
     <NavigationContainer>
       <Stack.Navigator>
       {/* <Stack.Screen name="Login" component={Login} options={{headerShown:false}} /> */}
+        <Stack.Screen name="TraCuu" component={TraCuu} options={{headerShown:false}} />
         <Stack.Screen name="Welcome" component={Welcome} options={{headerShown:false}} />
         <Stack.Screen name="Onboarding1" component={Onboarding1} />
         <Stack.Screen name="Onboarding2" component={Onboarding2} />

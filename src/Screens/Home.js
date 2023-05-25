@@ -117,15 +117,27 @@ function Home({navigation}) {
   }
   return (
     < View style={styles.container}>
-        <TouchableOpacity
-            style={styles.searchBtn}
-            onPress={onPressLocation}
-        >
-            <Text>{formatted_address}</Text>
-        </TouchableOpacity>
         <View style={styles.topBar}>
+          <TouchableOpacity
+              style={styles.searchBtn}
+              onPress={onPressLocation}
+          >
+              <Text>{formatted_address}</Text>
+          </TouchableOpacity>
         </View>
         <View style={styles.topDownBar}>
+          <TouchableOpacity
+              style={styles.selectBtn}
+              onPress={()=>navigation.navigate("TraCuu")}
+          >
+            <Image source={require("../assets/images/tracuu.png")}/>
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.selectBtn}
+            onPress={onCenter}
+          >
+              <Image source={imagePath.greenIndicator}/>
+          </TouchableOpacity>
         </View>
         <View style={{flex:1}}>
             <MapView ref={mapref} style={StyleSheet.absoluteFill}
@@ -134,13 +146,15 @@ function Home({navigation}) {
                   latitudeDelta: LATITUDE_DELTA,
                   longitudeDelta: LONGITUDE_DELTA
                 }}
+                tileSize={256}
             >
                 <Marker.Animated ref = {markerRef} coordinate={cordinate} />
                 
                 {Object.keys(destinationCords).length > 0 &&(<Marker coordinate={destinationCords}  />)}
                 {Object.keys(destinationCords).length > 0 &&(
                   <MapViewDirections
-                    origin={curLoc} destination={destinationCords}
+                    origin={curLoc} 
+                    destination={destinationCords}
                     apikey={GOOGLE_MAP_KEY}
                     strokeWidth={5}
                     strokeColor='red'
@@ -153,25 +167,18 @@ function Home({navigation}) {
                       })
                       }
                     }
-                    onError={(errorMessage)=>{}}
                   />
-                )}
+                )}  
             </MapView>
-            <TouchableOpacity
-              style={{position:'absolute', top:0, right: 0}}
-              onPress={onCenter}
-            >
-                <Image source={imagePath.greenIndicator}/>
-            </TouchableOpacity>
         </View>
-        <View style={styles.statusBar}>
-        { distance !==0 && time !== 0 &&(
-          <View style={{alignItems:'center'}}>
-            <Text style={styles.subTitle_1}>{Math.floor(time)} Phút</Text>
-            <Text style={styles.subTitle_2}>{Math.floor(distance)} Km</Text> 
+        { (distance !== 0 && time !== 0) &&(
+          <View style={styles.statusBar}>
+            <View style={{alignItems:'center'}}>
+              <Text style={styles.subTitle_1}>{Math.floor(time)} Phút</Text>
+              <Text style={styles.subTitle_2}>{Math.floor(distance)} Km</Text> 
+            </View>
           </View>
         )}
-        </View>
     </View>
   );
 }
@@ -180,7 +187,7 @@ const styles = StyleSheet.create({
     flex:1,
   },
   topBar:{
-    height:80,
+    height:100,
     backgroundColor :'#1B202D',
     width:'100%',
     padding:14,
@@ -189,11 +196,14 @@ const styles = StyleSheet.create({
     height:150,
     backgroundColor :'white',
     width:'100%',
+    justifyContent:'flex-start',
+    flexDirection:'row',
+    padding:15
   },
   searchBtn:{
     position:'absolute',
     zIndex:10,
-    top:40,
+    bottom:0,
     left: 15,
     backgroundColor: 'white',
     borderRadius: 10,
@@ -211,6 +221,11 @@ const styles = StyleSheet.create({
     shadowRadius: 4.65,
     elevation: 7,
     marginTop: 16
+  },
+  selectBtn:{
+    margin:5,
+    width:60,
+    height:70
   },
   statusBar:{
     height:50,
