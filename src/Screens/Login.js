@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import {
   StyleSheet,
   View,
@@ -37,12 +37,16 @@ export default Login = function ({ navigation }) {
 
   return (
     <View style={styles.container}>
+      
       <TouchableOpacity
         onPress={() => navigation.navigate("Onboarding3")}
-        style={{ alignSelf: "left", marginLeft: 23, marginTop:0.05*height }}
+        style={{  marginLeft: 23, marginTop:0.055*height , marginRight:0.85*width}}
       >
         <Icon name="arrow-left" size={30} color={'#E77C7C'} />
       </TouchableOpacity>
+    
+      
+      
       <View style={styles.avatarContainer}>
         <LottieView
           source={require("../assets/images/login.json")}
